@@ -6,49 +6,29 @@
   <title>Travel Notification</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
-<script>
-  window.OneSignalDeferred = window.OneSignalDeferred || [];
-  OneSignalDeferred.push(async function(OneSignal) {
-    await OneSignal.init({
-      appId: "f0621028-be38-4027-bffd-cbd49d08c963",
+  <script>
+    window.OneSignalDeferred = window.OneSignalDeferred || [];
+    OneSignalDeferred.push(async function() {
+      const OneSignal = window.OneSignal || [];
+      await OneSignal.init({
+        appId: "f0621028-be38-4027-bffd-cbd49d08c963",
+      });
     });
-  });
-</script>
-  <style>
-    /* Custom styles */
-    .notification-container {
-      background-color: white;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      border-radius: 0.5rem;
-      padding: 2rem;
-      max-width: 20rem;
-      text-align: center;
-    }
-    .notify-button {
-      margin-top: 1.5rem;
-      background-color: #3b82f6; /* Tailwind blue-500 */
-      color: white;
-      font-weight: 600;
-      padding: 0.5rem 1rem;
-      border-radius: 0.25rem;
-      transition: background-color 0.2s;
-    }
-    .notify-button:hover {
-      background-color: #2563eb; /* Tailwind blue-600 */
-    }
-  </style>
-</head>
+  </script>
+</head> 
+
 <body class="flex items-center justify-center h-screen bg-gray-100">
 
   <!-- Notification Container -->
-  <div class="notification-container">
+  <div class="notification-container text-center p-6 bg-white shadow-md rounded-lg">
     <h1 class="text-2xl font-semibold text-gray-800">Travel Recommendations</h1>
     <p class="text-gray-600 mt-4">Receive notifications for the best countries to visit this month!</p>
-    <div class='onesignal-customlink-container'></div>
-    <button id="notifyBtn" class="notify-button">
+    <div class='onesignal-customlink-container mt-4'></div>
+    <button id="notifyBtn" class="notify-button mt-4 bg-blue-500 text-white px-4 py-2 rounded">
       Enable Notifications
     </button>
   </div>
 
 </body>
 </html>
+
